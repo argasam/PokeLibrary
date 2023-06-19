@@ -25,7 +25,8 @@ And of course PokeLib itself is open source with a [public repository][dill]
  ```sh
 npm run start
 ```
-
+## Misc
+Screenshot is on img folder
 
 [reactjs]: <https://react.dev/>
 [tailwindcss]: <https://tailwindcss.com/>

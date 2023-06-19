@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a88a48b5.css",
+    "main.js": "/static/js/main.a87ed6ac.js",
+    "static/js/787.fb797025.chunk.js": "/static/js/787.fb797025.chunk.js",
+    "static/media/pokeball.svg": "/static/media/pokeball.8b0d0c2bc8d39dae3b69c6be615fc35b.svg",
+    "static/media/darkpoke.svg": "/static/media/darkpoke.0cf78923fbffe5c80f93de59f136a16e.svg",
+    "index.html": "/index.html",
+    "main.a88a48b5.css.map": "/static/css/main.a88a48b5.css.map",
+    "main.a87ed6ac.js.map": "/static/js/main.a87ed6ac.js.map",
+    "787.fb797025.chunk.js.map": "/static/js/787.fb797025.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a88a48b5.css",
+    "static/js/main.a87ed6ac.js"
+  ]
+}

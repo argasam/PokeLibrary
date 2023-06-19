@@ -30,3 +30,4 @@ Screenshot is on img folder
 
 [reactjs]: <https://react.dev/>
 [tailwindcss]: <https://tailwindcss.com/>
+[dill]: <https://github.com/argasam/PokeLibrary>

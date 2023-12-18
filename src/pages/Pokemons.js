@@ -26,22 +26,20 @@ const Pokemons = () => {
     setNextUrl(data.next);
     setPrevUrl(data.previous)
     loadPokemon(data)
+    console.log(data);
     setLoading(false)
   }
 
   const loadPokemon = async (data) => {
-    function toListPokemon(list) {
-      // console.log(list);
-      list.forEach(async (pokemon) => {
-        // console.log(pokemon);
+    const pokemonDetails = await Promise.all(
+      data.results.map(async (pokemon) => {
         const data = await getPokemon(pokemon.name);
-        setListPokemon(currentList => [...currentList, data])
-        listPokemon.sort((a, b) => a.id - b.id)
-      });
-    }
-    toListPokemon(data.results);
-    console.log(listPokemon)
-  }
+        return data;
+      })
+    );
+    setListPokemon(pokemonDetails);
+  };
+  
 
   const updateOwnedPokemon = (newOwnedPokemon) => {
     const userData = JSON.parse(savedData);

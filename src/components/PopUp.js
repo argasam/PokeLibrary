@@ -4,6 +4,7 @@ import CatchPokemon from './CatchPopUp'
 import ClosePopUp from './RemovePopUp'
 import { ReactComponent as Pokeball } from '../img/pokeball.svg'
 import darkpoke from '../img/darkpoke.svg'
+import { useEffect } from 'react';
 
 const PopUp = ({ closePopup, pokemon, user, updateOwnedPokemon}) => {
     const [randomNumber, setRandomNumber] = useState(null);
@@ -16,6 +17,14 @@ const PopUp = ({ closePopup, pokemon, user, updateOwnedPokemon}) => {
             user.ownedPokemon.includes(pokemonName)
         )
     }
+
+    useEffect(() => {
+        if (open) {
+          document.body.style.overflow = 'hidden';
+        } else {
+          document.body.style.overflow = 'unset';
+        }
+      }, [open]);
 
     const handleDeletePokemon = () => {
         // Update the user's ownedPokemon list
@@ -45,7 +54,7 @@ const PopUp = ({ closePopup, pokemon, user, updateOwnedPokemon}) => {
     const typeNames = pokemon.types.map((ability) => ability.type.name);
 
     return(
-        <div className="h-screen w-full fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-50">
+        <div className="h-full w-full fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-50">
             <div  className="overflow-clip bg-clip-content flex flex-col w-1/5 h-auto border-2 rounded-xl bg-white xs:w-2/3 sm:w-1/3 md:w-1/3 lg:w-1/3 ">
                 <div className=" flex flex-row justify-between p-2">
                     <h1>Pokemon Detail</h1>
@@ -173,6 +182,9 @@ const PopUp = ({ closePopup, pokemon, user, updateOwnedPokemon}) => {
                                 closepopup={() => {
                                     setOpen(false);
                                     closePopup();
+                                }}
+                                closeLittlePop={() => {
+                                    setOpen(false)
                                 }}
                                 result={randomNumber}
                                 user={user}

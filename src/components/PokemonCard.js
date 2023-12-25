@@ -1,6 +1,5 @@
 import React from "react";
 import darkpoke from '../img/darkpoke.svg'
-import { useEffect } from 'react';
 
 const PokemonCard = ({id, name, type1, type2, image, key, onClick, user}) => {
     function checkPokemon(pokemonName, user) {
@@ -8,14 +7,6 @@ const PokemonCard = ({id, name, type1, type2, image, key, onClick, user}) => {
             user.ownedPokemon.includes(pokemonName)
         )
     }
-
-    useEffect(() => {
-        if (onClick === true) {
-          document.body.style.overflow = 'hidden';
-        } else {
-          document.body.style.overflow = 'unset';
-        }
-    }, [onClick]);
         
     return(
         <div className='cards flex flex-col justify-around

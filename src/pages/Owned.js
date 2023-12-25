@@ -32,15 +32,14 @@ const Owned = () => {
   }
 
   const loadPokemon = async (data) => {
-    function toListPokemon(list) {
-      list.forEach(async (pokemon) => {
-        const data = await getPokemon(pokemon);
-        setListPokemon(currentList => [...currentList, data])
-        listPokemon.sort((a, b) => a.id - b.id)
-      });
-    }
-    toListPokemon(data);
-  }
+    const pokemonDetails = await Promise.all(
+      data.results.map(async (pokemon) => {
+        const data = await getPokemon(pokemon.name);
+        return data;
+      })
+    );
+    setListPokemon(pokemonDetails);
+  };
 
   
   const updateOwnedPokemon = (newOwnedPokemon) => {

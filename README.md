@@ -21,6 +21,10 @@ And of course PokeLib itself is open source with a [public repository][dill]
 ## Installation
  Clone this repository. 
  You may have some library not yet installed, go ahead to install needed library.
+
+ ```sh
+npm install
+```
  
  ```sh
 npm run start

@@ -4,7 +4,6 @@ import CatchPokemon from './CatchPopUp'
 import ClosePopUp from './RemovePopUp'
 import { ReactComponent as Pokeball } from '../img/pokeball.svg'
 import darkpoke from '../img/darkpoke.svg'
-import { useEffect } from 'react';
 
 const PopUp = ({ closePopup, pokemon, user, updateOwnedPokemon}) => {
     const [randomNumber, setRandomNumber] = useState(null);
@@ -17,15 +16,7 @@ const PopUp = ({ closePopup, pokemon, user, updateOwnedPokemon}) => {
             user.ownedPokemon.includes(pokemonName)
         )
     }
-
-    useEffect(() => {
-        if (open) {
-          document.body.style.overflow = 'hidden';
-        } else {
-          document.body.style.overflow = 'unset';
-        }
-      }, [open]);
-
+    
     const handleDeletePokemon = () => {
         // Update the user's ownedPokemon list
         const newOwnedPokemon = user.ownedPokemon.filter((ownedPokemon) => ownedPokemon !== pokemon.name);
